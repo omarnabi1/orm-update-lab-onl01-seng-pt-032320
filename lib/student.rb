@@ -4,13 +4,13 @@ class Student
   
   attr_accessor :id, :name, :grade
 
-def initialize (id = nil, name, grade)
+  def initialize (id = nil, name, grade)
   @id = id
   @name = name
   @grade = grade
-end
+  end
 
-def self.create_table
+  def self.create_table
   sql = <<-SQL 
         CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY,
@@ -19,8 +19,11 @@ def self.create_table
         )
         SQL
    DB[:conn].execute(sql)
- end
+  end
  
- def self.drop_table
-
+  def self.drop_table
+   sql =  "DROP TABLE IF EXISTS students"
+    DB[:conn].execute(sql)
+  end
+  
 end
