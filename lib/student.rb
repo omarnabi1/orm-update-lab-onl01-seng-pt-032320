@@ -15,6 +15,6 @@ def self.create_table
         CREATE TABLE IF NOT EXIST students (
         id INTEGER PRIMARY KEY,
         name TEXT,
-        )
+        grade TEXT)
 
 end
